@@ -26,14 +26,31 @@ module "eks" {
 
 
   eks_managed_node_groups = {
-    one = {
-      name = "node-group-1"
-
+    az1 = {
+      name = "node-group-az1"
+      subnet_ids = [aws_subnet.eks_private_subnet[0].id]
       instance_types = ["t3.small"]
+
+      labels = {
+          node_az = "az1"
+        }
 
       min_size     = 0
       max_size     = 1
-      desired_size = 0
+      desired_size = 1
+    }
+    az2 = {
+      name = "node-group-az2"
+      subnet_ids = [aws_subnet.eks_private_subnet[1].id]
+      instance_types = ["t3.small"]
+
+      labels = {
+          node_az = "az2"
+        }
+
+      min_size     = 0
+      max_size     = 1
+      desired_size = 1
     }
   }
 }

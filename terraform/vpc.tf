@@ -104,7 +104,10 @@ resource "aws_route_table" "private_routes" {
     cidr_block = "0.0.0.0/0"
     gateway_id = aws_nat_gateway.gw.id
   }
-
+  lifecycle { 
+       create_before_destroy = true
+       ignore_changes        = [ tags, route ]
+   }
   tags = {
     Name = "private routes"
   }
@@ -121,7 +124,7 @@ resource "aws_route_table_association" "routes_to_private_subnet1" {
 }
 
 resource "aws_route_table_association" "routes_to_eks_private_subnet0" {
-  subnet_id      = aws_subnet.eks_private_subnet[1].id
+  subnet_id      = aws_subnet.eks_private_subnet[0].id
   route_table_id = aws_route_table.private_routes.id
 }
 
