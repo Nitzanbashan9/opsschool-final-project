@@ -15,12 +15,22 @@ resource "aws_security_group" "jenkins-sg" {
     from_port = 0
     to_port = 65535
     protocol = "tcp"
-    cidr_blocks = ["109.186.208.253/32"]
+    cidr_blocks = ["93.173.102.156/32"]
   }
 
+  egress {
+    description = "Allow all outgoing traffic"
+    from_port = 0
+    to_port = 0
+    // -1 means all
+    protocol = "-1"
+    cidr_blocks = [
+      "0.0.0.0/0"
+    ]
+  }
 
   tags = {
-    Environment = "mid project"
+    Environment = "final project"
   }
 }
 
@@ -59,6 +69,49 @@ resource "aws_security_group" "jenkins_alb_sg" {
   }
 
   tags = {
-    Environment = "mid project"
+    Environment = "final project"
+  }
+}
+
+resource "aws_security_group" "db_sg" {
+  name = "db-sg"
+  description = "db-sg"
+  vpc_id = aws_vpc.main.id
+
+  ingress {
+    from_port = 3306
+    to_port = 3306
+    protocol = "tcp"
+    self = true
+    security_groups = [module.eks.node_security_group_id]
+  }
+
+  ingress {
+    from_port = 3306
+    to_port = 3306
+    protocol = "tcp"
+    cidr_blocks = ["93.173.102.156/32"]
+  }
+  ingress {
+    from_port = 3306
+    to_port = 3306
+    protocol = "tcp"
+    security_groups = [aws_security_group.jenkins-sg.id]
+  }
+
+
+  egress {
+    description = "Allow all outgoing traffic"
+    from_port = 0
+    to_port = 0
+    // -1 means all
+    protocol = "-1"
+    cidr_blocks = [
+      "0.0.0.0/0"
+    ]
+  }
+
+  tags = {
+    Environment = "final project"
   }
 }

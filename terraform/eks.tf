@@ -2,7 +2,7 @@ module "eks" {
   source  = "terraform-aws-modules/eks/aws"
   version = "19.5.1"
 
-  cluster_name    = "midproject"
+  cluster_name    = "finalproject"
   cluster_version = "1.24"
 
   vpc_id                         = aws_vpc.main.id
@@ -14,9 +14,9 @@ module "eks" {
 
   }
   cluster_addons = {
-    coredns = {
-      resolve_conflicts = "OVERWRITE"
-    }
+//    coredns = {
+//      resolve_conflicts = "OVERWRITE"
+//    }
     kube-proxy = {}
     vpc-cni = {
       resolve_conflicts        = "OVERWRITE"
@@ -31,9 +31,9 @@ module "eks" {
 
       instance_types = ["t3.small"]
 
-      min_size     = 1
+      min_size     = 0
       max_size     = 1
-      desired_size = 1
+      desired_size = 0
     }
   }
 }

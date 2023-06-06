@@ -14,5 +14,9 @@ variable "private_cidr" {
 variable "eks_private_cidr" {
         default = ["10.0.10.0/24", "10.0.20.0/24"]
 }
-
-
+variable "aws_account_number" {
+        default = "388840466175"
+}
+variable "eks_cluster_oidc_issuer" {
+        default = "oidc.eks.us-east-1.amazonaws.com/id/DD840A8805478EA9C83920C7B4EADFC0"
+}

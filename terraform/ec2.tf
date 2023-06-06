@@ -20,7 +20,7 @@ resource "aws_instance" "Jenkins_Master" {
 
   tags = {
     Name = "Jenkins_Master"
-    Environment = "mid project"
+    Environment = "final project"
   }
 }
 
@@ -45,6 +45,6 @@ resource "aws_instance" "Jenkins_Slave" {
 
   tags = {
     Name = "Jenkins_Slave_${count.index}"
-    Environment = "mid project"
+    Environment = "final project"
   }
 }

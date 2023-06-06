@@ -5,7 +5,7 @@ resource "aws_vpc" "main" {
   enable_dns_hostnames = true
   enable_dns_support   = true
   tags = {
-    Name = "midproject_vpc"
+    Name = "finalproject_vpc"
   }
 }
 
@@ -18,7 +18,7 @@ resource "aws_subnet" "public_subnet" {
   availability_zone = var.az[count.index]
   tags = {
     Name = "public_subnet-${count.index}"
-    "kubernetes.io/cluster/midproject" = "shared"
+    "kubernetes.io/cluster/finalproject" = "shared"
     "kubernetes.io/role/elb"                      = "1"
   }
 }
@@ -42,7 +42,7 @@ resource "aws_subnet" "eks_private_subnet" {
   availability_zone = var.az[count.index] 
   tags = {
     Name = "eks_private_subnet-${count.index}"
-    "kubernetes.io/cluster/midproject" = "shared"
+    "kubernetes.io/cluster/finalproject" = "shared"
     "kubernetes.io/role/internal-elb"             = "1"
 
   }
