@@ -17,5 +17,5 @@ resource "aws_route53_record" "elk" {
   name    = "elasticsearch.elephant.com"
   type    = "CNAME"
   ttl     = 300
-  records = [aws_instance.elk.address]
-}
+  records = [aws_instance.elk.private_ip]
+  }

@@ -13,10 +13,13 @@ module "eks" {
     ami_type = "AL2_x86_64"
 
   }
+
+  cluster_additional_security_group_ids = [aws_security_group.jenkins-eks-sg.id]
+
   cluster_addons = {
-//    coredns = {
-//      resolve_conflicts = "OVERWRITE"
-//    }
+    coredns = {
+      resolve_conflicts = "OVERWRITE"
+    }
     kube-proxy = {}
     vpc-cni = {
       resolve_conflicts        = "OVERWRITE"
