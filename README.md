@@ -5,7 +5,7 @@ Welcome to my final project at OpsSchool-Class9, which will support running the 
 :elephant: Related Repository - Kandula App --> https://github.com/Nitzanbashan9/kandula-app-9
 
 
-[its over](https://gfycat.com/repulsivefavoriteass-bryan-cranston-finally-itsover-atlast)
+[Bryan Cranston Finally It's Over At Last](https://gfycat.com/repulsivefavoriteass-bryan-cranston-finally-itsover-atlast)
 
 
 # How to start?
@@ -14,6 +14,6 @@ Welcome to my final project at OpsSchool-Class9, which will support running the 
    $ terraform init
    $ terraform apply
 
-   #change the variables.tf and tfvars.tf files with your requested variables.
-   ```
+   #change the variablesin variables.tf file with your requested variables.
+
 ###ADD JENKINS SECTION
