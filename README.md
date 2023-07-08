@@ -5,8 +5,7 @@ Welcome to my final project at OpsSchool-Class9, which will support running the 
 :elephant: Related Repository - Kandula App --> https://github.com/Nitzanbashan9/kandula-app-9
 
 
-[Bryan Cranston Finally It's Over At Last](https://gfycat.com/repulsivefavoriteass-bryan-cranston-finally-itsover-atlast)
-
+(https://gfycat.com/repulsivefavoriteass)
 
 # How to start?
 ```shell script
