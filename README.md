@@ -4,10 +4,7 @@ Welcome to my final project at OpsSchool-Class9, which will support running the 
 
 :elephant: Related Repository - Kandula App --> https://github.com/Nitzanbashan9/kandula-app-9
 
-
 ![Finally It's Over At Last](https://media.giphy.com/media/t8QSeqwoy0Ol2/giphy.gif)
-![Alt Text](https://media.giphy.com/media/mVJ5xyiYkC3Vm/giphy.gif)
-
 
 # How to start?
 ```shell script
@@ -19,4 +16,3 @@ Welcome to my final project at OpsSchool-Class9, which will support running the 
 
 ###ADD JENKINS SECTION
 
-![Finally It's Over At Last](https://media.giphy.com/media/t8QSeqwoy0Ol2/giphy.gif)
